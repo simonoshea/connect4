@@ -1,5 +1,5 @@
 //Simon O'Shea 09006479
-//Thomas Newe - CE4704 - Computer Software 4
+//CE4704 - Computer Software 4
 
 #ifndef CONNECT_4
 #define CONNECT_4
@@ -11,9 +11,9 @@ using namespace std;
 //class grid
 class Grid{
 
-char board[6][8]; //board size
+char board[6][8]; //board size 6x8
 public:
-//construct grid
+//construct grid/board
 Grid(){
 int row,col;
 
@@ -74,7 +74,7 @@ do
 {
 (player==1)?player_chip=(char)254:player_chip=(char)5;
 
-if ( player == 1) //if statement to change the color of grid
+if ( player == 1) //if statement to change the color of grid for each player
 {
 	system("color 4"); //red
 }
@@ -147,7 +147,7 @@ int i, ii;
 //check for left diag (\)
 for(i = row -1, ii= col-1;board[i][ii] == player_chip && i>=0 && ii >=0; diagonalright ++, i --, ii --); //Up and left
 for(i = row +1, ii = col+1;board[i][ii] == player_chip && i<=5 && ii <=6;diagonalright ++, i ++, ii ++); //Down and right
-if(diagonalright >= 4) return true; //4 chips found
+if(diagonalright >= 4) return true; //4 chips found game over
 }
 
 bool Grid::check_ddown(int row, int col, char player_chip){ //check diagonal down
